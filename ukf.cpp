@@ -299,8 +299,8 @@ void UKF::UpdateLidar(const VectorXd& meas_package) {
 	MatrixXd PHt = P_ * H_Laser_.transpose();
 	MatrixXd K = PHt * S.inverse();
 
-    //Calculate NIS
-    NIS_Laser_ = y.transpose()*S.inverse()*y; 
+        //Calculate NIS
+        NIS_Laser_ = y.transpose()*S.inverse()*y; 
 
 	//new estimate
 	x_ = x_ + (K * y);
@@ -399,8 +399,8 @@ void UKF::UpdateRadar(const VectorXd& meas_package) {
 	while (z_diff(1)> M_PI) z_diff(1) -= 2.*M_PI;
 	while (z_diff(1)<-M_PI) z_diff(1) += 2.*M_PI;
 
-    //Calculate NIS
-    NIS_Radar_ = z_diff.transpose()*S.inverse()*z_diff; 
+        //Calculate NIS
+        NIS_Radar_ = z_diff.transpose()*S.inverse()*z_diff; 
 
 	//update state mean and covariance matrix
 	x_ += K * z_diff;

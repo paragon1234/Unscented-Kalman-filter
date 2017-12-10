@@ -19,8 +19,8 @@ class UKF {
 	MatrixXd R_Laser_;
 	// previous timestamp
 	long long previous_timestamp_;
-    double NIS_Laser_;
-    double NIS_Radar_;
+        double NIS_Laser_;
+        double NIS_Radar_;
 
 	void AugmentedSigmaPoints();
 	void SigmaPointPrediction(double delta_t);
